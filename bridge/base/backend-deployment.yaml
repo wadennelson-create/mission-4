@@ -1,0 +1,36 @@
+#! backend-deployment.yaml
+# Generated code, do not edit
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: backend
+    namespace: mission-4-mrk1
+    labels:
+        com.docker.compose.project: mission-4-mrk1
+        com.docker.compose.service: backend
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            com.docker.compose.project: mission-4-mrk1
+            com.docker.compose.service: backend
+    strategy:
+        type: Recreate
+    template:
+        metadata:
+            labels:
+                com.docker.compose.project: mission-4-mrk1
+                com.docker.compose.service: backend
+                com.docker.compose.network.default: "true"
+        spec:
+            restartPolicy: unless-stopped
+            containers:
+                - name: backend
+                  image: mission-4-mrk1-backend
+                  imagePullPolicy: IfNotPresent
+                  env:
+                    - name: PORT
+                      value: "5000"
+                  ports:
+                    - name: backend-5000
+                      containerPort: 5000

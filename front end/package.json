@@ -1,0 +1,18 @@
+{
+	"name": "mission-4-mrk1-frontend",
+	"version": "1.0.0",
+	"description": "React frontend for Tina, a Turners insurance recommendation assistant",
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@vitejs/plugin-react": "^6.0.2",
+		"lucide-react": "^1.20.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"vite": "^8.0.16"
+	}
+}

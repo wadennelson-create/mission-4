@@ -1,0 +1,11 @@
+services:
+  backend:
+    ports: !override
+      - "5002:5000"
+
+  frontend:
+    build:
+      args:
+        VITE_API_BASE_URL: http://localhost:5002/api
+    ports: !override
+      - "5175:80"
